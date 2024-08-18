@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ol>
+  <h2><strong>Pokedex Website Yurd</strong></h2>
+  {% for name, id in pokemon_data %}
+  <li>
+    <a href="{{url_for('pokemon_info', pokemon_name=name)}}">{{name}}</a>
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png" alt="{{name}}">
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}
